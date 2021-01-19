@@ -13,7 +13,7 @@ class AdminSeeder extends Seeder
         $admin = Admin::create([
             'name' => 'Super Admin',
             'email' => 'super_admin@app.com',
-            'phone' => '01156455369',
+            'phone' => '123',
             'email_verified_at' => now(),
             'password' => bcrypt(123),
             'remember_token' => Str::random(10),

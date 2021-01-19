@@ -45,8 +45,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         // ALL ROUTES [ INDEX, CREATE, STORE, EDIT, UPDATE, SHOW ]
         Route::resource('users', 'UsersController')->except(['destroy']);
         // END ROUTES USERS MODE
-        Route::resource('admins', 'AdminsController');
 
-        Route::resource('test', 'TestController');
+        Route::resource('admins', 'AdminsController');
     }); // END OF 'DASHBOARD' PREFIX
 });

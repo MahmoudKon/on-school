@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Hash;
 use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
@@ -45,7 +44,7 @@ class User extends Authenticatable
     }
 
     public function setPasswordAttribute($value) {
-        return $this->attributes['password'] = Hash::make($value);
+        return $this->attributes['password'] = bcrypt($value);
     } // Auto Hash Password
 
     public function scopeSearch($query, $request) {
